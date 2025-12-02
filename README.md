@@ -243,6 +243,13 @@ The CLI uses:
 - `app/inference.py` → loads `models/forest_classifier.pkl`, exposes `predict_image(image_path)`  
 - `app/cli_predict.py` → minimal `argparse` wrapper to run predictions from the command line  
 
+### Security note
+
+The CLI uses `fastai.load_learner` under the hood, which relies on Python's
+`pickle` format. This is standard for fastai projects, but it does mean you
+should only load model files (`.pkl`) that you trust. In this repo the
+`forest_classifier.pkl` file is produced locally from the provided notebook.
+
 ---
 
 ## (Optional) re-running training
