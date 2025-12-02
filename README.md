@@ -12,6 +12,25 @@ The goal is to demonstrate a **full ML lifecycle**:
 
 in a way that is easy to clone and run locally, even in an offline / SSL-restricted environment.
 
+## Data & model files
+
+To keep the repository lightweight and avoid committing large binaries, the
+training data and exported model are **not** tracked in git.
+
+- `data/` – expected directory for local images, e.g. `data/forest/<class_name>/*.jpg`
+- `models/forest_classifier.pkl` – exported fastai learner created by the notebook
+
+When you clone this repo you will **not** see `data/` or `models/` by default.
+
+To reproduce my setup locally:
+
+1. Create the folder structure and add your images:
+
+   ```bash
+   data/forest/giant_sequoia_forest/
+   data/forest/oak_forest/
+   data/forest/pine_forest/
+
 ---
 
 ## Features
